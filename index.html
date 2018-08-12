@@ -1,0 +1,251 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Weight Conertor</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    
+    <style>
+        body{
+
+        background:#333;
+            color:#ffffff;
+        margin-top: 20px;
+        }
+      
+    </style>
+    </head>
+    
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6  col-lg-12  ">
+                    
+                <h1 class="display-4 text-primary text-center mb-3">Weight Converter</h1>
+                <div class="row">
+                 
+                    <div class="col-md-8  col-lg-8">
+                           <form>
+                    <div class="form-group">
+                        
+                        <input id="input" type="number" class="form-control form-control-lg" placeholder="Enter Weight ">
+                    </div>
+ </form>
+                    </div>
+                    
+                       
+                    <div class="col-md-4 col-lg-4 ">
+                               
+                <div class="form-group">
+                    
+                  
+<select class="form-control" id='sell'>
+    
+    <option value="Kilogram" >Kilogram</option>
+     <option value="Gram">Gram</option>
+      <option>Pounds</option>
+       <option>Ounces</option>
+    
+    
+    
+</select>                    
+                    
+                    
+                </div>
+                    </div>
+                </div>
+                
+         
+             
+                
+                
+                <div id="output">
+                   
+                     <div class="card bg-secondary mb-2" id="kg">
+                     <div class="card-block">
+                            <h4 class="m-3">Kilogram:</h4>
+                            <div id="koutput"></div>
+                         </div>
+                </div>
+                    <div class="card bg-primary mb-2 " id="pound">
+                     <div class="card-block">
+                            <h4 class="m-3">Pound:</h4>
+                            <div id="poutput"></div>
+                </div>
+      </div>
+                
+                   
+                    <div class="card bg-success mb-2"  id="gram">
+                     <div class="card-block">
+                            <h4 class="m-3">Gram:</h4>
+                            <div id="goutput"></div>
+                </div>
+      </div>
+                    <div class="card bg-danger mb-2"  id="ounce">
+                     <div class="card-block">
+                            <h4 class="m-3">Ounce:</h4>
+                            <div id="ozoutput"></div>
+                </div>
+                
+              
+      </div>
+                    
+                    
+                    
+                </div>
+                
+                
+                </div>
+                
+                
+            </div>
+            
+            
+        </div>
+        
+<script>
+        
+          
+       
+          
+         document.getElementById('output').style.visibility='hidden';
+            var b;
+             document.getElementById('sell').addEventListener('change',function(m){
+                 let types=m.target.value;
+                 switch(types){
+                         
+                     case "Kilogram":
+                         b=1;
+                    hy();
+                         break;
+                          
+                          case "Gram":
+                         b=2;
+                         hy();
+                         break;
+                         case "Pounds":
+                         b=3;
+                         hy();
+                         break;
+                          case "Ounces":
+                         b=4;
+                         hy();
+                         break;
+                         
+                         
+                         
+                         
+                 }
+
+                   
+             });
+                 
+    function hy(){
+
+    document.getElementById('input').value="";
+        
+                     document.getElementById('koutput').innerHTML=0;
+                     document.getElementById('poutput').innerHTML=0;
+             document.getElementById('goutput').innerHTML=0;
+                 document.getElementById('ozoutput').innerHTML=0;
+       
+                         
+        
+    }
+    
+    
+         document.getElementById('input').addEventListener('input',function(e){
+       document.getElementById('output').style.visibility='visible';
+           let numbera=e.target.value;
+                   
+             
+            switch(b){
+                    case 1:
+                    
+                
+                    
+                    document.getElementById('koutput').innerHTML=numbera;
+                  document.getElementById('poutput').innerHTML=numbera*2.20462;
+             document.getElementById('goutput').innerHTML=numbera*1000;
+                 document.getElementById('ozoutput').innerHTML=numbera*35.274;
+                    
+                   
+                         break;
+                    
+             
+                 
+                    
+                    
+                    
+         
+                case 2:  
+              document.getElementById('koutput').innerHTML=numbera*0.001;
+            document.getElementById('poutput').innerHTML=numbera*0.00220462;
+             document.getElementById('goutput').innerHTML=numbera;
+                 document.getElementById('ozoutput').innerHTML=numbera*0.035274;
+       break;
+        
+                          case 3:
+      document.getElementById('koutput').innerHTML=numbera*0.453592;
+            document.getElementById('poutput').innerHTML=numbera;
+             document.getElementById('goutput').innerHTML=numbera*453.592;
+                 document.getElementById('ozoutput').innerHTML=numbera*16;
+      break
+                         
+                          case 4:
+                     document.getElementById('koutput').innerHTML=numbera*0.453592;
+                     document.getElementById('poutput').innerHTML=numbera*2.20462;
+             document.getElementById('goutput').innerHTML=numbera*28.3495;
+                 document.getElementById('ozoutput').innerHTML=numbera;
+       
+                         break;
+                    
+                  
+                    default :
+                           document.getElementById('koutput').innerHTML=numbera;
+                  document.getElementById('poutput').innerHTML=numbera*2.20462;
+             document.getElementById('goutput').innerHTML=numbera*1000;
+                 document.getElementById('ozoutput').innerHTML=numbera*35.274;
+                     
+                    
+            }
+     
+
+            
+               
+                    
+
+            
+                 
+             });
+          
+            
+    
+            
+            
+      
+       
+        </script>
+        
+      
+        
+        
+        
+        
+        <script src="javas.js"></script>
+   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        
+        
+    </body>
+  
+  
+  
+  
+  
+  
+  
